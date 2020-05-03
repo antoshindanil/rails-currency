@@ -1,7 +1,8 @@
 class CurrencyUpdateJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    Currency.current_currency
+  def perform
+    currency = Currency.current_currency
+    ActionCable.server.broadcast "currency_channel", value: currency.value
   end
 end

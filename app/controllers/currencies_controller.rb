@@ -3,6 +3,6 @@
 class CurrenciesController < ApplicationController
   def index
     @currency = Currency.current_currency
-    render json: @currency
+    render :index
   end
 end
