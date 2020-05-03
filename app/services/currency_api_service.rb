@@ -12,5 +12,4 @@ class CurrencyApiService
   def success?
     @client.last_response.status == 201 || 200
   end
-
 end

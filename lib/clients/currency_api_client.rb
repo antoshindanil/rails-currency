@@ -7,7 +7,8 @@ class CurrencyApiClient
 
   def get_course(currency: "RUB", base_currency: "USD")
     response = @http_client.get("/latest?base=#{base_currency}&symbols=#{currency}")
-    JSON.parse(response.body)
+    json = JSON.parse(response.body)
+    json['rates'][currency].to_f
   end
 
   private
