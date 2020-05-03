@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Currency < ApplicationRecord
+  UPDATE_TIME = 1.minutes
+
   validates :name, :value, presence: true
 
-  UPDATE_TIME = 5.minutes
+  after_create { CurrencyUpdateWorker.perform_at(Time.current + Currency::UPDATE_TIME) }
 
   def self.current_currency
     if where('"expired_in" > ?', Time.current).exists?

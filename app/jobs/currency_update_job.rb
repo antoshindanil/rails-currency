@@ -2,6 +2,6 @@ class CurrencyUpdateJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    Currency.update
+    Currency.current_currency
   end
 end

@@ -2,7 +2,7 @@
 
 class CurrenciesController < ApplicationController
   def index
-    @currency = Currency.currency_value
+    @currency = Currency.current_currency
     render json: @currency
   end
 end
