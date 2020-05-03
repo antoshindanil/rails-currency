@@ -6,6 +6,7 @@ consumer.subscriptions.create("CurrencyChannel", {
   },
 
   received(data) {
-    console.log(data)
+    console.log(data["value"])
+    document.querySelector("#carrency").innerText = data["value"]
   }
 });

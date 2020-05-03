@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Currency < ApplicationRecord
-  UPDATE_TIME = 30.seconds
+  UPDATE_TIME = 5.minutes
 
   validates :name, :value, presence: true
 
