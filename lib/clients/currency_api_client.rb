@@ -1,14 +1,14 @@
 class CurrencyApiClient
-  ROOT_ENDPOINT = "https://api.ratesapi.io/api"
+  ROOT_ENDPOINT = "https://www.freeforexapi.com"
 
   def initialize
     @http_client = setup_http_client
   end
 
-  def get_course(currency: "RUB", base_currency: "USD")
-    response = @http_client.get("/latest?base=#{base_currency}&symbols=#{currency}")
+  def get_course(base_currency: "USD", currency: "RUB")
+    response = @http_client.get("/api/live?pairs=#{base_currency + currency}")
     json = JSON.parse(response.body)
-    json['rates'][currency].to_f
+    json["rates"][base_currency + currency]["rate"]
   end
 
   private

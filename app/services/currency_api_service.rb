@@ -6,7 +6,7 @@ class CurrencyApiService
   end
 
   def call
-    @client.get_course
+    @client.get_course(base_currency: "USD", currency: "RUB")
   end
 
   def success?
