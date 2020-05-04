@@ -23,9 +23,10 @@ gem 'redis', '~> 4.0'
 gem 'sidekiq'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
 # Faradat http client
 gem 'faraday'
+# UI gems
+gem 'bootstrap', '~> 4.4.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
