@@ -1,3 +1,9 @@
-<h1>USD-RUB</h1>
-
-<%= render "currencies" %>
+<div class="row mx-0">
+  <div class="container mt-5">
+    <h1 class="mb-3"> USD/RUB </h1>
+    <div class="card py-3 px-3">
+      <%= render "currency" %>
+    </div>
+    <%= link_to "Admin",  admin_form_path(@currency), class: "btn btn-primary mt-3"%>
+  </div>
+</div>
