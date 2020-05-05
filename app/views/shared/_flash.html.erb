@@ -1,0 +1,6 @@
+<% flash.each do |key, message| %>
+  <% bs_class = key == 'alert' ? 'danger' : 'primary' %>
+  <div class="container alert alert-<%= bs_class %> alert-dismissible fade show mt-3" role="alert">
+    <%= message %>
+  </div>
+<% end %>
