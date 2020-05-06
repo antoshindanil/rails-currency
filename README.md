@@ -40,9 +40,14 @@ yarn install
 ```bash
 rails db:migrate
 ```
+Для запуска используется Foreman:
+
+```bash
+gem install foreman
+```
 
 ## Пример запуска: 
 
 ```bash
-rails s
+foreman start
 ```
