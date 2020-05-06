@@ -1,4 +1,5 @@
 # Rails Currency app
+![](https://priscree.ru/img/c590bbebb2db40.png)
 
 ## Реализуйте web-приложение (Rails проект), которое удовлетворяет нижеизложенным требованиям: 
 
