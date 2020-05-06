@@ -11,7 +11,7 @@ class Admin::CurrenciesController < Admin::BaseController
     if @currency.save
       CurrencyUpdateWorker.perform_at(@currency.expired_in)
       ActionCable.server.broadcast "currency_channel", value: @currency.value
-      redirect_to admin_form_path(@currency), notice: 'Rates was successfully updated'
+      redirect_to admin_form_path(@currency), notice: "Rates was successfully updated"
     else
       render :new
     end
@@ -19,7 +19,7 @@ class Admin::CurrenciesController < Admin::BaseController
 
   def update
     @currency = Currency.last
-    
+
     if @currency.update(currency_params)
       CurrencyUpdateWorker.perform_at(@currency.expired_in)
       ActionCable.server.broadcast "currency_channel", value: @currency.value
@@ -30,8 +30,7 @@ class Admin::CurrenciesController < Admin::BaseController
   end
 
   private
-
-  def currency_params
-    params.require(:currency).permit(:name, :value, :expired_in)
-  end
+    def currency_params
+      params.require(:currency).permit(:name, :value, :expired_in)
+    end
 end
