@@ -12,7 +12,7 @@ class Currency < ApplicationRecord
     if where('"expired_in" > ?', Time.current).exists?
       last
     else
-      create(name: 'USD/RUB', value: currency_value, expired_in: Time.current + UPDATE_TIME)
+      create(name: "USD/RUB", value: currency_value, expired_in: Time.current + UPDATE_TIME)
     end
   end
 

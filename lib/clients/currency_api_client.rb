@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CurrencyApiClient
   ROOT_ENDPOINT = "https://www.freeforexapi.com"
 
@@ -12,8 +14,7 @@ class CurrencyApiClient
   end
 
   private
-
-  def setup_http_client
-    Faraday.new(url: ROOT_ENDPOINT)
-  end
+    def setup_http_client
+      Faraday.new(url: ROOT_ENDPOINT)
+    end
 end
